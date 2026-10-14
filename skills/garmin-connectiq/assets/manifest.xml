@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="3">
+    <!-- id: any 32 hex characters, unique per app (a beta listing needs its own id).
+         entry: the AppBase subclass. type: datafield | watchface | watch-app | widget. -->
+    <iq:application entry="MyApp" id="REPLACE-WITH-32-HEX-CHARS-APP-ID" launcherIcon="@Drawables.LauncherIcon"
+                    minSdkVersion="3.1.0" name="@Strings.AppName" type="datafield" version="0.1.0">
+        <iq:products>
+            <!-- Only devices whose profile you downloaded in the SDK Manager. -->
+            <iq:product id="fr255"/>
+        </iq:products>
+        <iq:permissions>
+            <!-- Add only what you use; a missing permission fails silently on the watch:
+                 Positioning: Activity.Info.currentLocation is null without it
+                 Communications: makeWebRequest   FitContributor: write FIT fields   Background: background services -->
+            <iq:uses-permission id="Positioning"/>
+        </iq:permissions>
+        <iq:languages>
+            <iq:language>eng</iq:language>
+        </iq:languages>
+        <iq:barrels/>
+    </iq:application>
+</iq:manifest>
